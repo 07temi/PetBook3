@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="NotesList" representedClassName="NotesList" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="noteActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="noteAlarm" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="noteDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="noteTitle" optional="YES" attributeType="String"/>
+        <relationship name="noteToPet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PetList" inverseName="petToNote" inverseEntity="PetList"/>
+    </entity>
+    <entity name="PetList" representedClassName="PetList" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="petName" optional="YES" attributeType="String"/>
+        <attribute name="petType" optional="YES" attributeType="String"/>
+        <relationship name="petToNote" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NotesList" inverseName="noteToPet" inverseEntity="NotesList"/>
+    </entity>
+    <elements>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="PetList" positionX="-151.2597045898438" positionY="131.2364807128906" width="128" height="103"/>
+        <element name="NotesList" positionX="54.61358642578125" positionY="111.1507568359375" width="128" height="133"/>
+    </elements>
+</model>
