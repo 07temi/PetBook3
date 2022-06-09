@@ -44,7 +44,9 @@ struct NoteListScreen: View {
                 }
                 .onDelete(perform: deleteItems)
             }
-            Button("add note", action: addNewNote)
+            NavigationLink(destination: AddNoteScreen()) {
+                Text("Добавить заметку")
+            }
         }
     }
     

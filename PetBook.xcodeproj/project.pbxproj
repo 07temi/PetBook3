@@ -20,6 +20,7 @@
 		7DA42C2F2850860000AEC336 /* NoteListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA42C2E2850860000AEC336 /* NoteListScreen.swift */; };
 		7DA42C3128509BAA00AEC336 /* NotesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA42C3028509BAA00AEC336 /* NotesRow.swift */; };
 		7DA42C352850C54400AEC336 /* AddPetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA42C342850C54400AEC336 /* AddPetScreen.swift */; };
+		7DA42C3728522DB100AEC336 /* AddNoteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA42C3628522DB100AEC336 /* AddNoteScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		7DA42C2E2850860000AEC336 /* NoteListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListScreen.swift; sourceTree = "<group>"; };
 		7DA42C3028509BAA00AEC336 /* NotesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRow.swift; sourceTree = "<group>"; };
 		7DA42C342850C54400AEC336 /* AddPetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetScreen.swift; sourceTree = "<group>"; };
+		7DA42C3628522DB100AEC336 /* AddNoteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				7DA42C1E2850764600AEC336 /* PetBook.xcdatamodeld */,
 				7DA42C192850764600AEC336 /* Preview Content */,
 				7DA42C342850C54400AEC336 /* AddPetScreen.swift */,
+				7DA42C3628522DB100AEC336 /* AddNoteScreen.swift */,
 			);
 			path = PetBook;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DA42C2C28507BA300AEC336 /* NotesList+CoreDataClass.swift in Sources */,
+				7DA42C3728522DB100AEC336 /* AddNoteScreen.swift in Sources */,
 				7DA42C2D28507BA300AEC336 /* NotesList+CoreDataProperties.swift in Sources */,
 				7DA42C202850764600AEC336 /* PetBook.xcdatamodeld in Sources */,
 				7DA42C2A28507BA300AEC336 /* PetList+CoreDataClass.swift in Sources */,
