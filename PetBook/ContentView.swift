@@ -10,7 +10,6 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \PetList.petName, ascending: true)],
         animation: .default)
@@ -18,17 +17,19 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                List {
+            TabView {
+                //List {
                     ForEach(pets) { pet in
                         NavigationLink("\(pet.petName ?? "")", destination: NoteListScreen(selectedPet: pet))
                     }
-                    .onDelete(perform: deleteItems)
-                }
+                 //   .onDelete(perform: deleteItems)
+                //}
                 NavigationLink(destination: AddPetScreen()) {
                     Text("Добавить питомца")
                 }
             }
+            .tabViewStyle(.page(indexDisplayMode: .always))
+            .indexViewStyle(.page(backgroundDisplayMode: .always))
         }
 //            .toolbar {
 //                ToolbarItem(placement: .navigationBarTrailing) {
@@ -43,21 +44,21 @@ struct ContentView: View {
 //            Text("Select an item")
         }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = PetList(context: viewContext)
-            newItem.id = UUID()
-            newItem.petName = "Pet name"
-            newItem.petType = "Pet type"
-
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
+//    private func addItem() {
+//        withAnimation {
+//            let newItem = PetList(context: viewContext)
+//            newItem.id = UUID()
+//            newItem.petName = "Pet name"
+//            newItem.petType = "Pet type"
+//
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
