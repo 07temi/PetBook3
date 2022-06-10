@@ -18,19 +18,33 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             TabView {
-                //List {
-                    ForEach(pets) { pet in
+                ForEach(pets) { pet in
+                    VStack {
+                        Image(systemName: "star.fill")
+                            .resizable()
+                            .frame(width: 200, height: 200)
+                            .background(Color.green)
+                            .scaledToFit()
+                            .padding()
                         NavigationLink("\(pet.petName ?? "")", destination: NoteListScreen(selectedPet: pet))
                     }
-                 //   .onDelete(perform: deleteItems)
-                //}
-                NavigationLink(destination: AddPetScreen()) {
-                    Text("Добавить питомца")
+                }
+                VStack {
+                    Image(systemName: "star.fill")
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .background(Color.green)
+                        .scaledToFit()
+                        .padding(.bottom)
+                    NavigationLink(destination: AddPetScreen()) {
+                        Text("Добавить питомца")
+                    }
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
             .indexViewStyle(.page(backgroundDisplayMode: .always))
         }
+        .navigationBarHidden(true)
 //            .toolbar {
 //                ToolbarItem(placement: .navigationBarTrailing) {
 //                    EditButton()
@@ -75,8 +89,8 @@ struct ContentView: View {
 }
 
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-//    }
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
