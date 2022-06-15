@@ -44,6 +44,7 @@ struct NoteListScreen: View {
                 }
                 .onDelete(perform: deleteItems)
             }
+            .navigationBarTitle("\(selectedPet.petName ?? "")", displayMode: .inline)
             NavigationLink(destination: AddNoteScreen(selectedPet: selectedPet)) {
                 Text("Добавить заметку")
             }

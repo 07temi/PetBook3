@@ -10,7 +10,8 @@ import SwiftUI
 struct AddPetScreen: View {
     @Environment(\.managedObjectContext) private var viewContext
 //    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
+    @State private var petImage = UIImage()
+    @State private var imagePicker = false
     @State private var name = ""
     @State private var type = ""
     
@@ -19,12 +20,29 @@ struct AddPetScreen: View {
     var body: some View {
         Form {
             Section {
+                VStack{
+                    Image(uiImage: petImage)
+                        .resizable()
+                        .scaledToFit()
+                        .edgesIgnoringSafeArea(.all)
+                        .clipShape(Circle())
+                        .shadow(radius: 10)
+                        .overlay(Circle().stroke(Color.gray,lineWidth: 5))
+                    Button(action: {
+                        imagePicker.toggle()
+                    }, label: {
+                        Text("Add Image")
+                    })
+                        .sheet(isPresented: $imagePicker){
+                            ImagePickerView(selectedImage: $petImage)
+                        }
+                }
+                
                 Picker("Питомец", selection: $type) {
                     ForEach(types, id: \.self) { type in
                         Text(type)
                     }
                 }
-                
                 TextField("Имя", text: $name)
                     .disableAutocorrection(true)
                 //выбор даты
@@ -42,6 +60,7 @@ struct AddPetScreen: View {
         withAnimation {
             let newItem = PetList(context: viewContext)
             newItem.id = UUID()
+            newItem.petPicture = petImage.pngData()
             newItem.petName = name
             newItem.petType = type
 

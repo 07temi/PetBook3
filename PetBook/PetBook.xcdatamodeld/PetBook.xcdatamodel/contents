@@ -14,12 +14,13 @@
     <entity name="PetList" representedClassName="PetList" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="petName" optional="YES" attributeType="String"/>
+        <attribute name="petPicture" optional="YES" attributeType="Binary"/>
         <attribute name="petType" optional="YES" attributeType="String"/>
         <relationship name="petToNote" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NotesList" inverseName="noteToPet" inverseEntity="NotesList"/>
     </entity>
     <elements>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-        <element name="PetList" positionX="-151.2597045898438" positionY="131.2364807128906" width="128" height="103"/>
         <element name="NotesList" positionX="54.61358642578125" positionY="111.1507568359375" width="128" height="133"/>
+        <element name="PetList" positionX="-151.2597045898438" positionY="131.2364807128906" width="128" height="104"/>
     </elements>
 </model>

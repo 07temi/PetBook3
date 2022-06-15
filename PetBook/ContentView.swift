@@ -20,31 +20,51 @@ struct ContentView: View {
             TabView {
                 ForEach(pets) { pet in
                     VStack {
+//Извлечь опциональную переменную и избавиться от !
+                        if (pet.petPicture != nil) {
+                            Image(uiImage: UIImage(data: pet.petPicture!)!)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 200, height: 200)
+                                .clipShape(Circle())
+                                .padding()
+                                .contextMenu{MenuContext(item: pet)}
+                            NavigationLink("\(pet.petName ?? "")", destination: NoteListScreen(selectedPet: pet))
+                            Spacer()
+                        } else {
                         Image(systemName: "star.fill")
                             .resizable()
-                            .frame(width: 200, height: 200)
+                            .frame(width: 200, height: 300)
                             .background(Color.green)
+                            .cornerRadius(30)
                             .scaledToFit()
                             .padding()
+                            .contextMenu{MenuContext(item: pet)}
                         NavigationLink("\(pet.petName ?? "")", destination: NoteListScreen(selectedPet: pet))
+                        Spacer()
                     }
                 }
+                }
+             //   .onDelete(perform: deleteItems)
+                
                 VStack {
                     Image(systemName: "star.fill")
                         .resizable()
-                        .frame(width: 200, height: 200)
+                        .frame(width: 200, height: 300)
                         .background(Color.green)
+                        .cornerRadius(30)
                         .scaledToFit()
-                        .padding(.bottom)
+                        .padding()
                     NavigationLink(destination: AddPetScreen()) {
                         Text("Добавить питомца")
                     }
+                    Spacer()
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
             .indexViewStyle(.page(backgroundDisplayMode: .always))
         }
-        .navigationBarHidden(true)
+        
 //            .toolbar {
 //                ToolbarItem(placement: .navigationBarTrailing) {
 //                    EditButton()
@@ -57,37 +77,7 @@ struct ContentView: View {
 //            }
 //            Text("Select an item")
         }
-
-//    private func addItem() {
-//        withAnimation {
-//            let newItem = PetList(context: viewContext)
-//            newItem.id = UUID()
-//            newItem.petName = "Pet name"
-//            newItem.petType = "Pet type"
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { pets[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
