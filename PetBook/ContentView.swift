@@ -20,30 +20,33 @@ struct ContentView: View {
             TabView {
                 ForEach(pets) { pet in
                     VStack {
-//Извлечь опциональную переменную и избавиться от !
-                        if (pet.petPicture != nil) {
-                            Image(uiImage: UIImage(data: pet.petPicture!)!)
+                        if let picture = pet.petPicture {
+                            if let uiImage = UIImage(data: picture) {
+                                
+                                Image(uiImage: uiImage)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 200, height: 200)
+                                    .clipShape(Circle())
+                                    .padding()
+                                    .contextMenu{MenuContext(item: pet)}
+                                //NavigationLink("\(pet.petName ?? "")", destination: NoteListScreen(selectedPet: pet))
+                                NavigationLink("\(pet.petName ?? "")", destination: DMTabViewScreen(selectedPet: pet))
+                                Spacer()
+                            }
+                        }else{
+                            Image(systemName: "camera")
                                 .resizable()
-                                .scaledToFill()
+                                .scaledToFit()
                                 .frame(width: 200, height: 200)
-                                .clipShape(Circle())
+                                .background(Color.clear)
+                                .clipShape(Rectangle())
                                 .padding()
                                 .contextMenu{MenuContext(item: pet)}
                             NavigationLink("\(pet.petName ?? "")", destination: NoteListScreen(selectedPet: pet))
                             Spacer()
-                        } else {
-                        Image(systemName: "star.fill")
-                            .resizable()
-                            .frame(width: 200, height: 300)
-                            .background(Color.green)
-                            .cornerRadius(30)
-                            .scaledToFit()
-                            .padding()
-                            .contextMenu{MenuContext(item: pet)}
-                        NavigationLink("\(pet.petName ?? "")", destination: NoteListScreen(selectedPet: pet))
-                        Spacer()
+                        }
                     }
-                }
                 }
              //   .onDelete(perform: deleteItems)
                 

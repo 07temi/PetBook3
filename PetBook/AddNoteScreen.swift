@@ -18,6 +18,9 @@ struct AddNoteScreen: View {
     
     var body: some View {
         ScrollView {
+            Text("Add note")
+                .font(.title)
+                .padding(.top)
             VStack {
                 TextField("Заголовок", text: $title)
                     .textFieldStyle(.roundedBorder)
@@ -25,17 +28,19 @@ struct AddNoteScreen: View {
                 Toggle("Активировать", isOn: $active)
                 DatePicker("Уведомить", selection: $date)
                     .datePickerStyle(.compact)
+                Button("Сохранить", action: saveNote)
+                    .padding(.top)
                 
             }
             .padding()
         }
-        .toolbar{
-            ToolbarItemGroup(placement:.navigationBarTrailing){
-                Button(action: {saveNote()}, label: {
-                    Label("Add Department",systemImage: "checkmark")
-                })
-            }
-        }
+//        .toolbar{
+//            ToolbarItemGroup(placement:.navigationBarTrailing){
+//                Button(action: {saveNote()}, label: {
+//                    Label("add note",systemImage: "checkmark")
+//                })
+//            }
+//        }
     }
     
     private func saveNote(){

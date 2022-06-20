@@ -10,8 +10,11 @@ import SwiftUI
 struct NoteListScreen: View {
     @Environment(\.managedObjectContext) private var viewContext
     @StateObject var selectedPet: PetList
+    
+    @State private var addNote = false
 
     var body: some View {
+        NavigationView{
         VStack {
             List {
                 ForEach(selectedPet.notesArray) {note in
@@ -44,30 +47,22 @@ struct NoteListScreen: View {
                 }
                 .onDelete(perform: deleteItems)
             }
+            .sheet(isPresented: $addNote){
+                AddNoteScreen(selectedPet: selectedPet)
+            }
             .navigationBarTitle("\(selectedPet.petName ?? "")", displayMode: .inline)
-            NavigationLink(destination: AddNoteScreen(selectedPet: selectedPet)) {
-                Text("Добавить заметку")
+            .toolbar{
+                ToolbarItemGroup(placement:.navigationBarTrailing){
+                    Button(action: {addNote.toggle()}, label: {
+                        Label("add note",systemImage: "plus")
+                    })
+                }
             }
         }
     }
-    
-    private func updateState(){
-        viewContext.refreshAllObjects()
-        do {
-            try viewContext.save()
-        } catch {
-            let nsError = error as NSError
-            fatalError("Fatal error \(nsError), \(nsError.userInfo)")
-        }
     }
     
-    private func addNewNote(){
-        let newNote = NotesList(context: viewContext)
-        newNote.id = UUID()
-        newNote.noteTitle = "Note title"
-        newNote.noteActive = true
-        newNote.noteDate = Date()
-        newNote.noteToPet = selectedPet
+    private func updateState(){
         viewContext.refreshAllObjects()
         do {
             try viewContext.save()

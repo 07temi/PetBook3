@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7DA308612859F74100C9D5BF /* MenuContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA308602859F74100C9D5BF /* MenuContext.swift */; };
 		7DA30865285A045600C9D5BF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA30864285A045600C9D5BF /* ImagePicker.swift */; };
+		7DA308672860523A00C9D5BF /* DMTestMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA308662860523A00C9D5BF /* DMTestMainScreen.swift */; };
+		7DA3086928609B6700C9D5BF /* DMTabViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA3086828609B6700C9D5BF /* DMTabViewScreen.swift */; };
 		7DA42C142850764500AEC336 /* PetBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA42C132850764500AEC336 /* PetBookApp.swift */; };
 		7DA42C162850764500AEC336 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA42C152850764500AEC336 /* ContentView.swift */; };
 		7DA42C182850764600AEC336 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA42C172850764600AEC336 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		7DA308602859F74100C9D5BF /* MenuContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContext.swift; sourceTree = "<group>"; };
 		7DA30864285A045600C9D5BF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		7DA308662860523A00C9D5BF /* DMTestMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTestMainScreen.swift; sourceTree = "<group>"; };
+		7DA3086828609B6700C9D5BF /* DMTabViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTabViewScreen.swift; sourceTree = "<group>"; };
 		7DA42C102850764500AEC336 /* PetBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA42C132850764500AEC336 /* PetBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBookApp.swift; sourceTree = "<group>"; };
 		7DA42C152850764500AEC336 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				7DA42C342850C54400AEC336 /* AddPetScreen.swift */,
 				7DA42C3628522DB100AEC336 /* AddNoteScreen.swift */,
 				7DA308602859F74100C9D5BF /* MenuContext.swift */,
+				7DA308662860523A00C9D5BF /* DMTestMainScreen.swift */,
+				7DA3086828609B6700C9D5BF /* DMTabViewScreen.swift */,
 			);
 			path = PetBook;
 			sourceTree = "<group>";
@@ -184,12 +190,14 @@
 				7DA42C2C28507BA300AEC336 /* NotesList+CoreDataClass.swift in Sources */,
 				7DA42C3728522DB100AEC336 /* AddNoteScreen.swift in Sources */,
 				7DA42C2D28507BA300AEC336 /* NotesList+CoreDataProperties.swift in Sources */,
+				7DA3086928609B6700C9D5BF /* DMTabViewScreen.swift in Sources */,
 				7DA30865285A045600C9D5BF /* ImagePicker.swift in Sources */,
 				7DA42C202850764600AEC336 /* PetBook.xcdatamodeld in Sources */,
 				7DA42C2A28507BA300AEC336 /* PetList+CoreDataClass.swift in Sources */,
 				7DA42C1D2850764600AEC336 /* Persistence.swift in Sources */,
 				7DA42C2F2850860000AEC336 /* NoteListScreen.swift in Sources */,
 				7DA42C162850764500AEC336 /* ContentView.swift in Sources */,
+				7DA308672860523A00C9D5BF /* DMTestMainScreen.swift in Sources */,
 				7DA42C2B28507BA300AEC336 /* PetList+CoreDataProperties.swift in Sources */,
 				7DA308612859F74100C9D5BF /* MenuContext.swift in Sources */,
 				7DA42C3128509BAA00AEC336 /* NotesRow.swift in Sources */,

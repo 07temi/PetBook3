@@ -14,6 +14,7 @@ struct PetBookApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            //TestMainScreen()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
