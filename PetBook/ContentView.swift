@@ -15,6 +15,8 @@ struct ContentView: View {
         animation: .default)
     private var pets: FetchedResults<PetList>
     
+    @State var showList = false
+    
     var body: some View {
         NavigationView {
             TabView {
@@ -30,8 +32,9 @@ struct ContentView: View {
                                     .clipShape(Circle())
                                     .padding()
                                     .contextMenu{MenuContext(item: pet)}
-                                //NavigationLink("\(pet.petName ?? "")", destination: NoteListScreen(selectedPet: pet))
-                                NavigationLink("\(pet.petName ?? "")", destination: DMTabViewScreen(selectedPet: pet))
+//                                NavigationLink("\(pet.petName ?? "")", destination: NoteListScreen(selectedPet: pet))
+                                NavigationLink("\(pet.petName ?? "")", destination: DMTabViewScreen())
+                                    
                                 Spacer()
                             }
                         }else{

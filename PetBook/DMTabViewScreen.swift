@@ -8,29 +8,23 @@
 import SwiftUI
 
 struct DMTabViewScreen: View {
-    
-    @StateObject var selectedPet: PetList
-    
     var body: some View {
-        TabView {
-            NoteListScreen(selectedPet: selectedPet)
+        TabView{
+            Text("Test")
                 .tabItem {
-                    Image(systemName: "clock")
-                    Text("Напоминания")
+                    Label("tab_1", systemImage: "person")
                 }
-            Text("Journal")
-                .tabItem {
-                    Image(systemName: "list.bullet.circle")
-                    Text("Дневник")
-                }
-            Text("Journal")
-                .tabItem {
-                    Image(systemName: "list.bullet.circle")
-                    Text("Дневник")
-                }
+        }
+        .toolbar{
+            ToolbarItemGroup(placement:.navigationBarTrailing){
+                Button(action: {}, label: {
+                    Label("add note",systemImage: "plus")
+                })
+            }
         }
     }
 }
+
 
 //struct DMTabViewScreen_Previews: PreviewProvider {
 //    static var previews: some View {

@@ -14,7 +14,8 @@ struct NoteListScreen: View {
     @State private var addNote = false
 
     var body: some View {
-        NavigationView{
+        
+//        NavigationView{
         VStack {
             List {
                 ForEach(selectedPet.notesArray) {note in
@@ -60,7 +61,7 @@ struct NoteListScreen: View {
             }
         }
     }
-    }
+//    }
     
     private func updateState(){
         viewContext.refreshAllObjects()
