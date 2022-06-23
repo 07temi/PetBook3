@@ -33,7 +33,9 @@ struct ContentView: View {
                                     .padding()
                                     .contextMenu{MenuContext(item: pet)}
 //                                NavigationLink("\(pet.petName ?? "")", destination: NoteListScreen(selectedPet: pet))
-                                NavigationLink("\(pet.petName ?? "")", destination: DMTabViewScreen())
+                                NavigationLink("\(pet.petName ?? "")", destination: DMTabViewScreen(selectedPet: pet)
+                                               // .navigationBarHidden(true)
+                                )
                                     
                                 Spacer()
                             }

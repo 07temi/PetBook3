@@ -11,7 +11,7 @@ struct NoteListScreen: View {
     @Environment(\.managedObjectContext) private var viewContext
     @StateObject var selectedPet: PetList
     
-    @State private var addNote = false
+   // @State private var addNote = false
 
     var body: some View {
         
@@ -48,17 +48,18 @@ struct NoteListScreen: View {
                 }
                 .onDelete(perform: deleteItems)
             }
-            .sheet(isPresented: $addNote){
-                AddNoteScreen(selectedPet: selectedPet)
-            }
-            .navigationBarTitle("\(selectedPet.petName ?? "")", displayMode: .inline)
-            .toolbar{
-                ToolbarItemGroup(placement:.navigationBarTrailing){
-                    Button(action: {addNote.toggle()}, label: {
-                        Label("add note",systemImage: "plus")
-                    })
-                }
-            }
+//            .sheet(isPresented: $addNote){
+//                AddNoteScreen(selectedPet: selectedPet)
+//            }
+            .navigationBarHidden(true)
+//            .navigationBarTitle("\(selectedPet.petName ?? "")", displayMode: .inline)
+//            .toolbar{
+//                ToolbarItemGroup(placement:.navigationBarTrailing){
+//                    Button(action: {addNote.toggle()}, label: {
+//                        Label("add note",systemImage: "plus")
+//                    })
+//                }
+//            }
         }
     }
 //    }

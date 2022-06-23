@@ -8,19 +8,47 @@
 import SwiftUI
 
 struct DMTabViewScreen: View {
+    
+    @StateObject var selectedPet: PetList
+    @State private var selectedTab = 0
+    @State private var addNote = false
+    @State private var addJournal = false
+    
     var body: some View {
-        TabView{
-            Text("Test")
+        TabView(selection: $selectedTab){
+            NoteListScreen(selectedPet: selectedPet)
                 .tabItem {
-                    Label("tab_1", systemImage: "person")
-                }
+                    Label("Напоминания", systemImage: "person")
+                }.navigationTitle(selectedPet.petName ?? "")
+                .tag(0)
+            
+            
+            Text("List of notes")
+                .tabItem {
+                    Label("Дневник", systemImage: "person")
+                }.navigationTitle(selectedPet.petName ?? "")
+                .tag(1)
         }
         .toolbar{
             ToolbarItemGroup(placement:.navigationBarTrailing){
-                Button(action: {}, label: {
+                Button(action: {AddActionForTab(tab: selectedTab)}, label: {
                     Label("add note",systemImage: "plus")
                 })
             }
+        }
+        .sheet(isPresented: $addNote){
+            AddNoteScreen(selectedPet: selectedPet)
+        }
+        .sheet(isPresented: $addJournal){
+            //AddNoteScreen(selectedPet: selectedPet)
+        }
+    }
+    
+    private func AddActionForTab(tab: Int){
+        switch tab {
+        case 0: addNote.toggle()
+        default:
+            addJournal.toggle()
         }
     }
 }
