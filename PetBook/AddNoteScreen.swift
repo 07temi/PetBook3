@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddNoteScreen: View {
+    @Environment(\.dismiss) private var dismiss
     @Environment(\.managedObjectContext) private var viewContext
     @StateObject var selectedPet: PetList
     
@@ -28,7 +29,10 @@ struct AddNoteScreen: View {
                 Toggle("Активировать", isOn: $active)
                 DatePicker("Уведомить", selection: $date)
                     .datePickerStyle(.compact)
-                Button("Сохранить", action: saveNote)
+                Button("Сохранить", action: {
+                    saveNote()
+                    dismiss()
+                })
                     .padding(.top)
                 
             }

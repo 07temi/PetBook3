@@ -34,7 +34,7 @@ struct AddPetScreen: View {
                         Text("Add Image")
                     })
                         .sheet(isPresented: $imagePicker){
-                            ImagePickerView(selectedImage: $petImage)
+                            PhotoPicker(petPicture: $petImage)
                         }
                 }
                 

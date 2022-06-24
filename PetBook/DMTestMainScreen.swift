@@ -25,7 +25,8 @@ struct DMTestMainScreen: View {
                                 Image(uiImage: uiImage)
                                     .resizable()
                                     .ignoresSafeArea()
-                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 400, height: 800)
+                                    //.aspectRatio(contentMode: .fill)
                                     .opacity(0.5)
                         } else {
                             Image(systemName: "camera")

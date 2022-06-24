@@ -48,9 +48,6 @@ struct NoteListScreen: View {
                 }
                 .onDelete(perform: deleteItems)
             }
-//            .sheet(isPresented: $addNote){
-//                AddNoteScreen(selectedPet: selectedPet)
-//            }
             .navigationBarHidden(true)
 //            .navigationBarTitle("\(selectedPet.petName ?? "")", displayMode: .inline)
 //            .toolbar{
