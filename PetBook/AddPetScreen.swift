@@ -25,9 +25,9 @@ struct AddPetScreen: View {
                         .resizable()
                         .scaledToFit()
                         .edgesIgnoringSafeArea(.all)
-                        .clipShape(Circle())
-                        .shadow(radius: 10)
-                        .overlay(Circle().stroke(Color.gray,lineWidth: 5))
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        //.shadow(radius: 10)
+                        //.overlay(Circle().stroke(Color.gray,lineWidth: 5))
                     Button(action: {
                         imagePicker.toggle()
                     }, label: {
@@ -36,7 +36,7 @@ struct AddPetScreen: View {
                         .sheet(isPresented: $imagePicker){
                             PhotoPicker(petPicture: $petImage)
                         }
-                }
+                }.padding()
                 
                 Picker("Питомец", selection: $type) {
                     ForEach(types, id: \.self) { type in
