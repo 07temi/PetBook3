@@ -25,6 +25,8 @@
 		7DA42C3128509BAA00AEC336 /* NotesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA42C3028509BAA00AEC336 /* NotesRow.swift */; };
 		7DA42C352850C54400AEC336 /* AddPetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA42C342850C54400AEC336 /* AddPetScreen.swift */; };
 		7DA42C3728522DB100AEC336 /* AddNoteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA42C3628522DB100AEC336 /* AddNoteScreen.swift */; };
+		7DB88AF0287311D400AC903D /* AddJournalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88AEF287311D400AC903D /* AddJournalScreen.swift */; };
+		7DB88AF22873138100AC903D /* JournalListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88AF12873138100AC903D /* JournalListScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		7DA42C3028509BAA00AEC336 /* NotesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRow.swift; sourceTree = "<group>"; };
 		7DA42C342850C54400AEC336 /* AddPetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetScreen.swift; sourceTree = "<group>"; };
 		7DA42C3628522DB100AEC336 /* AddNoteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteScreen.swift; sourceTree = "<group>"; };
+		7DB88AEF287311D400AC903D /* AddJournalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalScreen.swift; sourceTree = "<group>"; };
+		7DB88AF12873138100AC903D /* JournalListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +96,9 @@
 				7DA42C1E2850764600AEC336 /* PetBook.xcdatamodeld */,
 				7DA42C192850764600AEC336 /* Preview Content */,
 				7DA42C342850C54400AEC336 /* AddPetScreen.swift */,
+				7DB88AF12873138100AC903D /* JournalListScreen.swift */,
 				7DA42C3628522DB100AEC336 /* AddNoteScreen.swift */,
+				7DB88AEF287311D400AC903D /* AddJournalScreen.swift */,
 				7DA308602859F74100C9D5BF /* MenuContext.swift */,
 				7DA308662860523A00C9D5BF /* DMTestMainScreen.swift */,
 				7DA3086828609B6700C9D5BF /* DMTabViewScreen.swift */,
@@ -192,6 +198,7 @@
 				7DA42C2D28507BA300AEC336 /* NotesList+CoreDataProperties.swift in Sources */,
 				7DA3086928609B6700C9D5BF /* DMTabViewScreen.swift in Sources */,
 				7DA30865285A045600C9D5BF /* PhotoPicker.swift in Sources */,
+				7DB88AF0287311D400AC903D /* AddJournalScreen.swift in Sources */,
 				7DA42C202850764600AEC336 /* PetBook.xcdatamodeld in Sources */,
 				7DA42C2A28507BA300AEC336 /* PetList+CoreDataClass.swift in Sources */,
 				7DA42C1D2850764600AEC336 /* Persistence.swift in Sources */,
@@ -199,6 +206,7 @@
 				7DA42C162850764500AEC336 /* ContentView.swift in Sources */,
 				7DA308672860523A00C9D5BF /* DMTestMainScreen.swift in Sources */,
 				7DA42C2B28507BA300AEC336 /* PetList+CoreDataProperties.swift in Sources */,
+				7DB88AF22873138100AC903D /* JournalListScreen.swift in Sources */,
 				7DA308612859F74100C9D5BF /* MenuContext.swift in Sources */,
 				7DA42C3128509BAA00AEC336 /* NotesRow.swift in Sources */,
 				7DA42C352850C54400AEC336 /* AddPetScreen.swift in Sources */,

@@ -13,20 +13,24 @@ struct DMTabViewScreen: View {
     @State private var selectedTab = 0
     @State private var addNote = false
     @State private var addJournal = false
+    private var namePet: String {
+        let name = selectedPet.petName ?? "Unknown name"
+        return name
+    }
     
     var body: some View {
         TabView(selection: $selectedTab){
             NoteListScreen(selectedPet: selectedPet)
                 .tabItem {
                     Label("Напоминания", systemImage: "person")
-                }.navigationTitle(selectedPet.petName ?? "")
+                }.navigationTitle(namePet)
                 .tag(0)
             
             
-            Text("List of notes")
+            JournalListScreen(selectedPet: selectedPet)
                 .tabItem {
                     Label("Дневник", systemImage: "person")
-                }.navigationTitle(selectedPet.petName ?? "")
+                }.navigationTitle(namePet)
                 .tag(1)
         }
         .toolbar{
@@ -40,7 +44,7 @@ struct DMTabViewScreen: View {
             AddNoteScreen(selectedPet: selectedPet)
         }
         .sheet(isPresented: $addJournal){
-            //AddNoteScreen(selectedPet: selectedPet)
+            AddJournalScreen(selectedPet: selectedPet)
         }
     }
     

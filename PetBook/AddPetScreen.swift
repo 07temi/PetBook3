@@ -48,10 +48,10 @@ struct AddPetScreen: View {
                 //выбор даты
             }
         }
-        Button("Сохранить", action: savePet)
-//        .toolbar {
-//            Button("Сохранить", action: {} )
-//        }
+ //       Button("Сохранить", action: savePet)
+        .toolbar {
+            Button("Сохранить", action: {} )
+        }
         
         
     }

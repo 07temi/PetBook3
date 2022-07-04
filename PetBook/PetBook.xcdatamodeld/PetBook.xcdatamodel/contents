@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="JournalList" representedClassName="JournalList" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="journalTitle" optional="YES" attributeType="String"/>
+        <relationship name="journalToPet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PetList" inverseName="petToJournal" inverseEntity="PetList"/>
     </entity>
     <entity name="NotesList" representedClassName="NotesList" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -16,11 +21,13 @@
         <attribute name="petName" optional="YES" attributeType="String"/>
         <attribute name="petPicture" optional="YES" attributeType="Binary"/>
         <attribute name="petType" optional="YES" attributeType="String"/>
+        <relationship name="petToJournal" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="JournalList" inverseName="journalToPet" inverseEntity="JournalList"/>
         <relationship name="petToNote" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NotesList" inverseName="noteToPet" inverseEntity="NotesList"/>
     </entity>
     <elements>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-        <element name="NotesList" positionX="54.61358642578125" positionY="111.1507568359375" width="128" height="133"/>
-        <element name="PetList" positionX="-151.2597045898438" positionY="131.2364807128906" width="128" height="104"/>
+        <element name="NotesList" positionX="-150.2368774414062" positionY="217.5967712402344" width="128" height="133"/>
+        <element name="PetList" positionX="-550.590576171875" positionY="338.86669921875" width="128" height="133"/>
+        <element name="JournalList" positionX="-318.0059204101562" positionY="71.04837036132812" width="128" height="88"/>
     </elements>
 </model>
