@@ -50,7 +50,7 @@ struct AddPetScreen: View {
         }
  //       Button("Сохранить", action: savePet)
         .toolbar {
-            Button("Сохранить", action: {} )
+            Button("Сохранить", action: savePet )
         }
         
         

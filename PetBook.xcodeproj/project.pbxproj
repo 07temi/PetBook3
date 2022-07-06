@@ -27,6 +27,7 @@
 		7DA42C3728522DB100AEC336 /* AddNoteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA42C3628522DB100AEC336 /* AddNoteScreen.swift */; };
 		7DB88AF0287311D400AC903D /* AddJournalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88AEF287311D400AC903D /* AddJournalScreen.swift */; };
 		7DB88AF22873138100AC903D /* JournalListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88AF12873138100AC903D /* JournalListScreen.swift */; };
+		7DB88AF42874483800AC903D /* DMPetPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88AF32874483800AC903D /* DMPetPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		7DA42C3628522DB100AEC336 /* AddNoteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteScreen.swift; sourceTree = "<group>"; };
 		7DB88AEF287311D400AC903D /* AddJournalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalScreen.swift; sourceTree = "<group>"; };
 		7DB88AF12873138100AC903D /* JournalListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListScreen.swift; sourceTree = "<group>"; };
+		7DB88AF32874483800AC903D /* DMPetPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMPetPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				7DA308602859F74100C9D5BF /* MenuContext.swift */,
 				7DA308662860523A00C9D5BF /* DMTestMainScreen.swift */,
 				7DA3086828609B6700C9D5BF /* DMTabViewScreen.swift */,
+				7DB88AF32874483800AC903D /* DMPetPreview.swift */,
 			);
 			path = PetBook;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				7DA42C162850764500AEC336 /* ContentView.swift in Sources */,
 				7DA308672860523A00C9D5BF /* DMTestMainScreen.swift in Sources */,
 				7DA42C2B28507BA300AEC336 /* PetList+CoreDataProperties.swift in Sources */,
+				7DB88AF42874483800AC903D /* DMPetPreview.swift in Sources */,
 				7DB88AF22873138100AC903D /* JournalListScreen.swift in Sources */,
 				7DA308612859F74100C9D5BF /* MenuContext.swift in Sources */,
 				7DA42C3128509BAA00AEC336 /* NotesRow.swift in Sources */,

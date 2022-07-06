@@ -24,18 +24,20 @@ struct ContentView: View {
                     VStack {
                         if let picture = pet.petPicture {
                             if let uiImage = UIImage(data: picture) {
-                                
-                                Image(uiImage: uiImage)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 200, height: 200)
-                                    .clipShape(Circle())
-                                    .padding()
-                                    .contextMenu{MenuContext(item: pet)}
+                                NavigationLink(destination: DMTabViewScreen(selectedPet: pet)) {
+                                    DMPetPreview(name: pet.petName ?? "", image: uiImage) }
+                                .contextMenu{MenuContext(item: pet)}
+//                                Image(uiImage: uiImage)
+//                                    .resizable()
+//                                    .scaledToFill()
+//                                    .frame(width: 200, height: 200)
+//                                    .clipShape(Circle())
+//                                    .padding()
+//                                    .contextMenu{MenuContext(item: pet)}
 //                                NavigationLink("\(pet.petName ?? "")", destination: NoteListScreen(selectedPet: pet))
-                                NavigationLink("\(pet.petName ?? "")", destination: DMTabViewScreen(selectedPet: pet)
-                                               // .navigationBarHidden(true)
-                                )
+//                                NavigationLink("\(pet.petName ?? "")", destination: DMTabViewScreen(selectedPet: pet)
+//                                               // .navigationBarHidden(true)
+//                                )
                                     
                                 Spacer()
                             }
