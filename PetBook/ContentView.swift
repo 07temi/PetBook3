@@ -24,50 +24,47 @@ struct ContentView: View {
                     VStack {
                         if let picture = pet.petPicture {
                             if let uiImage = UIImage(data: picture) {
+                                Spacer()
                                 NavigationLink(destination: DMTabViewScreen(selectedPet: pet)) {
                                     DMPetPreview(name: pet.petName ?? "", image: uiImage) }
                                 .contextMenu{MenuContext(item: pet)}
-//                                Image(uiImage: uiImage)
-//                                    .resizable()
-//                                    .scaledToFill()
-//                                    .frame(width: 200, height: 200)
-//                                    .clipShape(Circle())
-//                                    .padding()
-//                                    .contextMenu{MenuContext(item: pet)}
-//                                NavigationLink("\(pet.petName ?? "")", destination: NoteListScreen(selectedPet: pet))
-//                                NavigationLink("\(pet.petName ?? "")", destination: DMTabViewScreen(selectedPet: pet)
-//                                               // .navigationBarHidden(true)
-//                                )
-                                    
                                 Spacer()
                             }
-                        }else{
-                            Image(systemName: "camera")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 200, height: 200)
-                                .background(Color.clear)
-                                .clipShape(Rectangle())
-                                .padding()
+    //                            Image(systemName: "camera")
+    //                                .resizable()
+    //                                .scaledToFit()
+    //                                .frame(width: 200, height: 200)
+    //                                .background(Color.clear)
+    //                                .clipShape(Rectangle())
+    //                                .padding()
+    //                                .contextMenu{MenuContext(item: pet)}
+    //                            NavigationLink("\(pet.petName ?? "")", destination: NoteListScreen(selectedPet: pet))
+    //                            Spacer()
+                            }else{
+                                NavigationLink(destination: DMTabViewScreen(selectedPet: pet)) {
+                                    DMPetPreview(name: pet.petName ?? "",
+                                                 image: UIImage(imageLiteralResourceName: "camera")) }
                                 .contextMenu{MenuContext(item: pet)}
-                            NavigationLink("\(pet.petName ?? "")", destination: NoteListScreen(selectedPet: pet))
-                            Spacer()
                         }
                     }
                 }
              //   .onDelete(perform: deleteItems)
                 
                 VStack {
-                    Image(systemName: "star.fill")
-                        .resizable()
-                        .frame(width: 200, height: 300)
-                        .background(Color.green)
-                        .cornerRadius(30)
-                        .scaledToFit()
-                        .padding()
+                    Spacer()
                     NavigationLink(destination: AddPetScreen()) {
-                        Text("Добавить питомца")
-                    }
+                        DMPetPreview(name: "New pet",
+                                     image: UIImage(imageLiteralResourceName: "camera")) }
+//                    Image(systemName: "star.fill")
+//                        .resizable()
+//                        .frame(width: 200, height: 300)
+//                        .background(Color.green)
+//                        .cornerRadius(30)
+//                        .scaledToFit()
+//                        .padding()
+//                    NavigationLink(destination: AddPetScreen()) {
+//                        Text("Добавить питомца")
+//                    }
                     Spacer()
                 }
             }

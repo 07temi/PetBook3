@@ -13,17 +13,15 @@ struct DMPetPreview: View {
     var image: UIImage
     
     var body: some View {
-        GeometryReader { geometry in
-            ZStack{
-                Image(uiImage: image)
-                    .resizable()
-                    //.scaledToFill()
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                //.clipShape(Circle())
-                Text(name)
-                    .foregroundColor(.white)
-                    .font(.largeTitle)
-            }
+        ZStack{
+            Image(uiImage: image)
+                .resizable()
+            //.scaledToFill()
+                .frame(width: 400, height: 400)
+                .clipShape(Circle())
+            Text(name)
+                .foregroundColor(.white)
+                .font(.largeTitle)
         }
         .navigationBarHidden(true)
     }
