@@ -13,8 +13,8 @@ struct PetBookApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-            //DMTestMainScreen()
+//            ContentView()
+            DMTestMainScreen()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

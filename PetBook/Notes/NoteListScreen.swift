@@ -10,12 +10,9 @@ import SwiftUI
 struct NoteListScreen: View {
     @Environment(\.managedObjectContext) private var viewContext
     @StateObject var selectedPet: PetList
-    
-   // @State private var addNote = false
 
     var body: some View {
         
-//        NavigationView{
         VStack {
             List {
                 ForEach(selectedPet.notesArray) {note in
@@ -48,7 +45,7 @@ struct NoteListScreen: View {
                 }
                 .onDelete(perform: deleteItems)
             }
-            .navigationBarHidden(true)
+           // .navigationBarHidden(false)
 //            .navigationBarTitle("\(selectedPet.petName ?? "")", displayMode: .inline)
 //            .toolbar{
 //                ToolbarItemGroup(placement:.navigationBarTrailing){

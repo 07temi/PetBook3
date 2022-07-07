@@ -20,15 +20,16 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             TabView {
+                
                 ForEach(pets) { pet in
                     VStack {
                         if let picture = pet.petPicture {
                             if let uiImage = UIImage(data: picture) {
-                                Spacer()
+                                //Spacer()
                                 NavigationLink(destination: DMTabViewScreen(selectedPet: pet)) {
                                     DMPetPreview(name: pet.petName ?? "", image: uiImage) }
                                 .contextMenu{MenuContext(item: pet)}
-                                Spacer()
+                                //Spacer()
                             }
     //                            Image(systemName: "camera")
     //                                .resizable()

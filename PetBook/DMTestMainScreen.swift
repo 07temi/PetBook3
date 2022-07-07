@@ -19,31 +19,20 @@ struct DMTestMainScreen: View {
     var body: some View {
         TabView {
             ForEach(pets) { pet in
-                ZStack {
-                    if let picture = pet.petPicture {
-                        if let uiImage = UIImage(data: picture) {
-                                Image(uiImage: uiImage)
-                                    .resizable()
-                                    .ignoresSafeArea()
-                                    .frame(width: 400, height: 800)
-                                    //.aspectRatio(contentMode: .fill)
-                                    .opacity(0.5)
-                        } else {
-                            Image(systemName: "camera")
-                        }
-                    }
-                    Text("PetName")
+                    NavigationLink(destination: DMTabViewScreen(selectedPet: pet)) {
+                        DMPetPreview(name: pet.petName ?? "", image: UIImage(imageLiteralResourceName: "camera")) }
+                    .contextMenu{MenuContext(item: pet)}
                 }
+                //Text(pet.petName ?? "NONAME")
             }
-        }
-        .ignoresSafeArea()
         .tabViewStyle(.page(indexDisplayMode: .always))
         .indexViewStyle(.page(backgroundDisplayMode: .always))
     }
 }
 
-struct TestMainScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        DMTestMainScreen()
-    }
-}
+
+//struct TestMainScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DMTestMainScreen()
+//    }
+//}

@@ -14,36 +14,22 @@ struct JournalListScreen: View {
     var body: some View {
 
         VStack {
-            List {
-                ForEach(selectedPet.journalsArray) {journal in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(journal.journalTitle ?? "Unknown title")
-                                .font(.system(size: 16))
-                        }
-                        Spacer()
-                        
-//                        Image(systemName: "bell.square")
-//                            .resizable()
-//                            .frame(width: 25, height: 25)
-//                            .foregroundColor(note.noteAlarm ? .green : .gray)
-//                            .onTapGesture {
-//                                note.noteAlarm.toggle()
-//                                updateState()
-//                            }
-//                        Image(systemName: "checkmark.square")
-//                            .resizable()
-//                            .frame(width: 25, height: 25)
-//                            .foregroundColor(note.noteActive ? .green : .gray)
-//                            .onTapGesture {
-//                                note.noteActive.toggle()
-//                                updateState()
-//                            }
-                    }
-                }
-                .onDelete(perform: deleteItems)
+            List(selectedPet.journalsArray) { journal in
+                Text(journal.journalTitle ?? "Unknown titlt")
+                    .font(.system(size: 16))
             }
-            .navigationBarHidden(true)
+//            List {
+//                ForEach(selectedPet.journalsArray) {journal in
+//                    HStack {
+//                        VStack {
+//                            Text(journal.journalTitle ?? "Unknown title")
+//                                .font(.system(size: 16))
+//                        }
+//                    }
+//                }
+//                .onDelete(perform: deleteItems)
+//            }
+           // .navigationBarHidden(true)
 //            .navigationBarTitle("\(selectedPet.petName ?? "")", displayMode: .inline)
 //            .toolbar{
 //                ToolbarItemGroup(placement:.navigationBarTrailing){

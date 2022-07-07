@@ -11,19 +11,19 @@ struct DMPetPreview: View {
     
     var name: String
     var image: UIImage
+    let screenSize = UIScreen.main.bounds.size.width
     
     var body: some View {
         ZStack{
             Image(uiImage: image)
                 .resizable()
             //.scaledToFill()
-                .frame(width: 400, height: 400)
+                .frame(width: screenSize, height: screenSize)
                 .clipShape(Circle())
             Text(name)
                 .foregroundColor(.white)
                 .font(.largeTitle)
         }
-        .navigationBarHidden(true)
     }
 }
 
