@@ -28,6 +28,9 @@
 		7DB88AF0287311D400AC903D /* AddJournalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88AEF287311D400AC903D /* AddJournalScreen.swift */; };
 		7DB88AF22873138100AC903D /* JournalListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88AF12873138100AC903D /* JournalListScreen.swift */; };
 		7DB88AF42874483800AC903D /* DMPetPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88AF32874483800AC903D /* DMPetPreview.swift */; };
+		7DB88AFE287C461100AC903D /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88AFD287C461100AC903D /* MotherView.swift */; };
+		7DB88B00287C464A00AC903D /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88AFF287C464A00AC903D /* ViewRouter.swift */; };
+		7DB88B02287C465D00AC903D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88B01287C465D00AC903D /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		7DB88AEF287311D400AC903D /* AddJournalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalScreen.swift; sourceTree = "<group>"; };
 		7DB88AF12873138100AC903D /* JournalListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListScreen.swift; sourceTree = "<group>"; };
 		7DB88AF32874483800AC903D /* DMPetPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMPetPreview.swift; sourceTree = "<group>"; };
+		7DB88AFD287C461100AC903D /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
+		7DB88AFF287C464A00AC903D /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		7DB88B01287C465D00AC903D /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 		7DA42C072850764500AEC336 = {
 			isa = PBXGroup;
 			children = (
+				7DB88AFC287C45F900AC903D /* ViewRouter */,
 				7DA42C2628507BA300AEC336 /* PetList+CoreDataClass.swift */,
 				7DA42C2728507BA300AEC336 /* PetList+CoreDataProperties.swift */,
 				7DA42C2828507BA300AEC336 /* NotesList+CoreDataClass.swift */,
@@ -124,6 +131,16 @@
 				7DA42C3028509BAA00AEC336 /* NotesRow.swift */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		7DB88AFC287C45F900AC903D /* ViewRouter */ = {
+			isa = PBXGroup;
+			children = (
+				7DB88AFD287C461100AC903D /* MotherView.swift */,
+				7DB88AFF287C464A00AC903D /* ViewRouter.swift */,
+				7DB88B01287C465D00AC903D /* Helper.swift */,
+			);
+			path = ViewRouter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,11 +222,14 @@
 				7DA42C202850764600AEC336 /* PetBook.xcdatamodeld in Sources */,
 				7DA42C2A28507BA300AEC336 /* PetList+CoreDataClass.swift in Sources */,
 				7DA42C1D2850764600AEC336 /* Persistence.swift in Sources */,
+				7DB88AFE287C461100AC903D /* MotherView.swift in Sources */,
 				7DA42C2F2850860000AEC336 /* NoteListScreen.swift in Sources */,
+				7DB88B02287C465D00AC903D /* Helper.swift in Sources */,
 				7DA42C162850764500AEC336 /* ContentView.swift in Sources */,
 				7DA308672860523A00C9D5BF /* DMTestMainScreen.swift in Sources */,
 				7DA42C2B28507BA300AEC336 /* PetList+CoreDataProperties.swift in Sources */,
 				7DB88AF42874483800AC903D /* DMPetPreview.swift in Sources */,
+				7DB88B00287C464A00AC903D /* ViewRouter.swift in Sources */,
 				7DB88AF22873138100AC903D /* JournalListScreen.swift in Sources */,
 				7DA308612859F74100C9D5BF /* MenuContext.swift in Sources */,
 				7DA42C3128509BAA00AEC336 /* NotesRow.swift in Sources */,

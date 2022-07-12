@@ -23,23 +23,26 @@ struct DMTabViewScreen: View {
             NoteListScreen(selectedPet: selectedPet)
                 .tabItem {
                     Label("Напоминания", systemImage: "person")
-                }.navigationTitle(namePet)
+                }//.navigationTitle(namePet)
                 .tag(0)
             
             
             JournalListScreen(selectedPet: selectedPet)
                 .tabItem {
                     Label("Дневник", systemImage: "person")
-                }.navigationTitle(namePet)
+                }//.navigationTitle(namePet)
                 .tag(1)
         }
         .toolbar{
-            ToolbarItemGroup(placement:.navigationBarTrailing){
+            Button("test", action: {})
+        }
+        //.toolbar{
+         //   ToolbarItemGroup(placement:.navigationBarTrailing){
                 Button(action: {AddActionForTab(tab: selectedTab)}, label: {
                     Label("add note",systemImage: "plus")
                 })
-            }
-        }
+           // }
+       // }
         .sheet(isPresented: $addNote){
             AddNoteScreen(selectedPet: selectedPet)
         }

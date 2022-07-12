@@ -10,6 +10,7 @@ import CoreData
 
 struct DMTestMainScreen: View {
     
+    @EnvironmentObject var viewRouter: ViewRouter
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \PetList.petName, ascending: true)],
@@ -19,12 +20,24 @@ struct DMTestMainScreen: View {
     var body: some View {
         TabView {
             ForEach(pets) { pet in
-                    NavigationLink(destination: DMTabViewScreen(selectedPet: pet)) {
-                        DMPetPreview(name: pet.petName ?? "", image: UIImage(imageLiteralResourceName: "camera")) }
+                //NavigationLink(destination: DMTabViewScreen(selectedPet: pet)) {
+                DMPetPreview(name: pet.petName ?? "", image: UIImage(imageLiteralResourceName: "camera"))
+                    .onTapGesture {
+                        withAnimation {
+                            viewRouter.currentPage = .page2(petTest: pet)
+                        }
+                    }
+                //}
                     .contextMenu{MenuContext(item: pet)}
-                }
-                //Text(pet.petName ?? "NONAME")
             }
+            DMPetPreview(name: "New pet", image: UIImage(imageLiteralResourceName: "camera"))
+                .onTapGesture {
+                    print("go to add new pet")
+                    withAnimation {
+                        viewRouter.currentPage = .page3
+                    }
+                }
+        }
         .tabViewStyle(.page(indexDisplayMode: .always))
         .indexViewStyle(.page(backgroundDisplayMode: .always))
     }
