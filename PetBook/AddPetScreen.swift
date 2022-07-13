@@ -10,7 +10,6 @@ import SwiftUI
 struct AddPetScreen: View {
     @EnvironmentObject var viewRouter: ViewRouter
     @Environment(\.managedObjectContext) private var viewContext
-//    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var petImage = UIImage()
     @State private var imagePicker = false
     @State private var name = ""
@@ -19,6 +18,12 @@ struct AddPetScreen: View {
     let types = ["Собака", "Кошка", "Хомяк"]
     
     var body: some View {
+        DMToolBar(title: "Tect") {
+            print("left button")
+        } rightButtonAction: {
+            print("right button")
+        }
+
         Form{
             HStack{
                 Text("Питомец")
@@ -43,8 +48,6 @@ struct AddPetScreen: View {
                 }
                 .sheet(isPresented: $imagePicker){
                     PhotoPicker(petPicture: $petImage)
-                    //            Button(action: { imagePicker.toggle() },
-                    //                   label: { Text("Add Image") })
                 }
             Button("Сохранить") {
                 savePet()

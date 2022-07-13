@@ -31,6 +31,7 @@
 		7DB88AFE287C461100AC903D /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88AFD287C461100AC903D /* MotherView.swift */; };
 		7DB88B00287C464A00AC903D /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88AFF287C464A00AC903D /* ViewRouter.swift */; };
 		7DB88B02287C465D00AC903D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88B01287C465D00AC903D /* Helper.swift */; };
+		7DB88B04287EAF7500AC903D /* DMToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB88B03287EAF7500AC903D /* DMToolBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		7DB88AFD287C461100AC903D /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
 		7DB88AFF287C464A00AC903D /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		7DB88B01287C465D00AC903D /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		7DB88B03287EAF7500AC903D /* DMToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMToolBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		7DA42C072850764500AEC336 = {
 			isa = PBXGroup;
 			children = (
+				7DB88B03287EAF7500AC903D /* DMToolBar.swift */,
 				7DB88AFC287C45F900AC903D /* ViewRouter */,
 				7DA42C2628507BA300AEC336 /* PetList+CoreDataClass.swift */,
 				7DA42C2728507BA300AEC336 /* PetList+CoreDataProperties.swift */,
@@ -221,6 +224,7 @@
 				7DB88AF0287311D400AC903D /* AddJournalScreen.swift in Sources */,
 				7DA42C202850764600AEC336 /* PetBook.xcdatamodeld in Sources */,
 				7DA42C2A28507BA300AEC336 /* PetList+CoreDataClass.swift in Sources */,
+				7DB88B04287EAF7500AC903D /* DMToolBar.swift in Sources */,
 				7DA42C1D2850764600AEC336 /* Persistence.swift in Sources */,
 				7DB88AFE287C461100AC903D /* MotherView.swift in Sources */,
 				7DA42C2F2850860000AEC336 /* NoteListScreen.swift in Sources */,
