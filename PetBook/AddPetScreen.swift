@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddPetScreen: View {
+    @EnvironmentObject var viewRouter: ViewRouter
     @Environment(\.managedObjectContext) private var viewContext
 //    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var petImage = UIImage()
@@ -15,46 +16,52 @@ struct AddPetScreen: View {
     @State private var name = ""
     @State private var type = ""
     
-    private let types = ["Собака", "Кошка", "Хомяк"]
+    let types = ["Собака", "Кошка", "Хомяк"]
     
     var body: some View {
-        Form {
-            Section {
-                VStack{
-                    Image(uiImage: petImage)
-                        .resizable()
-                        .scaledToFit()
-                        .edgesIgnoringSafeArea(.all)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                        //.shadow(radius: 10)
-                        //.overlay(Circle().stroke(Color.gray,lineWidth: 5))
-                    Button(action: {
-                        imagePicker.toggle()
-                    }, label: {
-                        Text("Add Image")
-                    })
-                        .sheet(isPresented: $imagePicker){
-                            PhotoPicker(petPicture: $petImage)
-                        }
-                }.padding()
-                
-                Picker("Питомец", selection: $type) {
+        Form{
+            HStack{
+                Text("Питомец")
+                Spacer()
+                Picker("", selection: $type) {
                     ForEach(types, id: \.self) { type in
                         Text(type)
                     }
+                }.pickerStyle(.menu)
+            }
+            TextField("Имя", text: $name)
+                .disableAutocorrection(true)
+            Image(uiImage: petImage)
+                .resizable()
+                .scaledToFit()
+                .edgesIgnoringSafeArea(.all)
+                .clipShape(Circle())
+                .shadow(radius: 10)
+                .overlay(Circle().stroke(Color.gray,lineWidth: 5))
+                .onTapGesture {
+                    imagePicker.toggle()
                 }
-                TextField("Имя", text: $name)
-                    .disableAutocorrection(true)
-                //выбор даты
+                .sheet(isPresented: $imagePicker){
+                    PhotoPicker(petPicture: $petImage)
+                    //            Button(action: { imagePicker.toggle() },
+                    //                   label: { Text("Add Image") })
+                }
+            Button("Сохранить") {
+                savePet()
+                withAnimation {
+                    viewRouter.currentPage = .page1
+                }
+            }
+            Button("Отменить") {
+                withAnimation {
+                    viewRouter.currentPage = .page1
+                }
             }
         }
- //       Button("Сохранить", action: savePet)
-        .toolbar {
-            Button("Сохранить", action: savePet )
-        }
-        
-        
     }
+
+    
+    
     
     private func savePet() {
         withAnimation {
