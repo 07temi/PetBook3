@@ -20,16 +20,25 @@ struct DMTestMainScreen: View {
     var body: some View {
         TabView {
             ForEach(pets) { pet in
-                //NavigationLink(destination: DMTabViewScreen(selectedPet: pet)) {
-                DMPetPreview(name: pet.petName ?? "", image: UIImage(imageLiteralResourceName: "camera"))
-                    .onTapGesture {
-                        withAnimation {
-                            viewRouter.currentPage = .page2(petTest: pet)
+                if let image : UIImage = UIImage(data: pet.petPicture!) {
+                    DMPetPreview(name: pet.petName ?? "", image: image)
+                        .onTapGesture {
+                            withAnimation {
+                                viewRouter.currentPage = .page2(petTest: pet)
+                            }
                         }
-                    }
-                //}
-                    .contextMenu{MenuContext(item: pet)}
+                        .contextMenu{MenuContext(item: pet)}
+                } else {
+                    DMPetPreview(name: pet.petName ?? "", image: UIImage(imageLiteralResourceName: "camera"))
+                        .onTapGesture {
+                            withAnimation {
+                                viewRouter.currentPage = .page2(petTest: pet)
+                            }
+                        }
+                        .contextMenu{MenuContext(item: pet)}
+                }
             }
+            
             DMPetPreview(name: "New pet", image: UIImage(imageLiteralResourceName: "camera"))
                 .onTapGesture {
                     print("go to add new pet")

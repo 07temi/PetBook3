@@ -15,16 +15,18 @@ struct DMToolBar: View {
     
     var body: some View {
         HStack{
-            Button("Назад", action: {
-                self.leftButtonAction()
-            } )
+            Button(action: { self.leftButtonAction() }) {
+                Image(systemName: "chevron.left")
+            }
+            .frame(width: 30)
             .padding(.leading)
             Spacer()
             Text(title)
             Spacer()
-            Button("Добавить", action: {
-                self.rightButtonAction()
-            } )
+            Button(action: { self.rightButtonAction() }) {
+                Image(systemName: "checkmark")
+            }
+            .frame(width: 30)
             .padding(.trailing)
         }
     }
