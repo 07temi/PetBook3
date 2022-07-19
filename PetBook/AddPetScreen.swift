@@ -18,7 +18,7 @@ struct AddPetScreen: View {
     let types = ["Собака", "Кошка", "Хомяк"]
     
     var body: some View {
-        DMToolBar(title: "Tect") {
+        DMToolBar(title: "Test") {
             print("left button")
         } rightButtonAction: {
             print("right button")

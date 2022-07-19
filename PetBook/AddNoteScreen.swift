@@ -34,7 +34,6 @@ struct AddNoteScreen: View {
                     dismiss()
                 })
                     .padding(.top)
-                
             }
             .padding()
         }

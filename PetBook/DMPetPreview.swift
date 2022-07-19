@@ -18,17 +18,12 @@ struct DMPetPreview: View {
             Image(uiImage: image)
                 .resizable()
             //.scaledToFill()
-                .frame(width: screenSize, height: screenSize)
+                .frame(width: screenSize - 10, height: screenSize - 10)
                 .clipShape(Circle())
+                .shadow(color: .blue, radius: 10, x: 0, y: 0)
             Text(name)
                 .foregroundColor(.white)
                 .font(.largeTitle)
         }
     }
 }
-
-//struct DMPetPreview_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DMPetPreview()
-//    }
-//}

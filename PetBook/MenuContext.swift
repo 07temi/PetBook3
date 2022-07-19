@@ -14,7 +14,20 @@ struct MenuContext: View {
     
     var body: some View {
         Group {
-            Button("Удалить", action:{delete(item: item)})
+            Button(role: .destructive, action: {delete(item: item)}) {
+                Label("Удалить", systemImage: "trash")
+            }
+            
+//            Button(role: .none, action: {delete(item: item)}) {
+//                Label{
+//                    Text("Text")
+//                        .foregroundColor(.green)
+//                } icon: {
+//                    Image(systemName: "trash")
+//                        .foregroundColor(.red)
+//                }
+//            }
+
         }
     }
     private func delete(item: NSManagedObject){
